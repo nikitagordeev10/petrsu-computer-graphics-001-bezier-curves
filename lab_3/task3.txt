@@ -1,0 +1,39 @@
+﻿Лабораторная работа 3. «Интерактивное преобразование трехмерной фигуры»
+---------------------
+С помощью SVG нарисовать некоторое геометрическое тело в 3-х мерном пространстве. Создать в этом же пространстве оси X,Y,Z со стрелками и подписями.
+
+Используя SVG, HTML и JavaScript, выполнить геометрические преобразования этой фигуры относительно неподвижных осей координат по нажатию на кнопки (преобразований должно быть не меньше трех различных видов).
+
+Подключение svg-файла к HTML-документу:
+<embed id="kub" width="400" height="500" type="image/svg+xml" src="1.svg"/>
+
+Создание кнопки в HTML-документе:
+<input type=button value="Смещение по оси OX" onClick="test1()">
+
+Чтобы установить значение атрибута тега в SVG-файле, можно воспользоваться следующей конструкцией JavaScript:
+
+<script language="JavaScript">
+
+var xx, temp;
+
+function test1(){
+
+temp = document.getElementById('kub').getSVGDocument().getElementById('r1'). getAttribute("x");
+xx = parseInt(temp);
+xx = xx+10;
+document.getElementById('kub').getSVGDocument().getElementById('r1').setAttribute("x", xx);
+
+...
+
+}
+</script>
+
+где:
+kub - идентификатор тега embed в HTML-документе;
+r1 - идентификатор тега rect в SVG-коде;
+x – атрибут прямоугольника.
+
+
+
+
+
