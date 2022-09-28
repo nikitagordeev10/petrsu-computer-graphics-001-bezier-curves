@@ -1,50 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>win 8</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 
-    <div>
-        <h1 font-family="Roboto" font-size="20" fill="#000000">Лабораторная работа 3, Гордеев Никита, 22207</h1>
-    </div>
+    <script type="text/javascript">
+        function car_down() {
+            x = 0;
+            x = document.getElementById("moto").offsetTop;
+            xn = x + 50;
+            document.getElementById("moto").style.top = xn + "px"
+        }
+        function car_up() {
+            x = 0;
+            x = document.getElementById("moto").offsetTop;
+            xn = x - 50;
+            document.getElementById("moto").style.top = xn + "px"
+        }
+        function car_left() {
+            x = 0;
+            x = document.getElementById("moto").offsetLeft;
+            xn = x - 50;
+            document.getElementById("moto").style.left = xn + "px"
+        }
+        function car_right() {
+            x = 0;
+            x = document.getElementById("moto").offsetLeft;
+            xn = x + 50;
+            document.getElementById("moto").style.left = xn + "px"
+        }
+        function car_left_down() {
+            x = 0;
+            x = document.getElementById("moto").offsetLeft;
+            xn = x - 50;
+            document.getElementById("moto").style.left = xn + "px"
 
-    <div class="header_button">
-        <h3>Управляющие кнопки</h3>
-        <button class="button_1">Перемещение влево по оси X</button>
-        <button class="button_1">Перемещение вправо по оси X</button>
+            x = 0;
+            x = document.getElementById("moto").offsetTop;
+            xn = x + 50;
+            document.getElementById("moto").style.top = xn + "px"
+        }
 
-        <button class="button_1">Перемещение влево по оси Y</button>
-        <button class="button_1">Перемещение вправо по оси Y</button>
+        function car_right_up() {
+            x = 0;
+            x = document.getElementById("moto").offsetLeft;
+            xn = x + 50;
+            document.getElementById("moto").style.left = xn + "px"
 
-        <button class="button_1">Перемещение влево по оси Z</button>
-        <button class="button_1">Перемещение вправо по оси Z</button>
-    </div>
+            x = 0;
+            x = document.getElementById("moto").offsetTop;
+            xn = x - 50;
+            document.getElementById("moto").style.top = xn + "px"
+        }
 
-    <div>
-        <img src="https://www.cyberforum.ru/images/cyberforum_logo.jpg" id="moto" style="position:absolute; top:100px; left:0px">
-        <input type="button" value="|" onclick="car_down()">
-        <input type="button" value="^" onclick="car_up()">
-        <input type="button" value="<" onclick="car_left()">
-        <input type="button" value=">" onclick="car_right()">
-    </div>
+    </script>
 
-    <svg width="501" height="475" viewBox="0 0 501 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 300 C100 300 250 000 400 300" style="fill: none; stroke:blue;stroke-width:2;"/>
-        <g>
-        <path d="M193.152 49.8068C162.514 76.9549 106.597 126.505 68.8928 159.918C31.2357 193.283 0.360582 220.764 0.265727 220.953C0.123446 221.333 25.7341 250.38 26.2558 250.38C26.4455 250.38 45.5587 233.578 68.7506 212.98C91.9425 192.429 140.603 149.334 176.79 117.25C213.024 85.1183 244.421 57.3057 246.602 55.4547L250.492 51.99L362.325 151.185C423.885 205.718 474.443 250.332 474.68 250.332C474.964 250.332 480.893 243.782 487.912 235.809C497.208 225.225 500.575 221.143 500.243 220.669C500.006 220.336 444.042 170.644 375.936 110.225C266.617 13.4037 251.819 0.44672 250.492 0.399259C249.069 0.351797 243.567 5.14542 193.152 49.8068Z" fill="black"/>
-        <path d="M74.6309 78.6634V125.745L76.196 124.322C77.6662 122.898 136.903 69.4559 137.092 69.361C137.092 69.3135 137.33 60.8179 137.519 50.4238L137.851 31.5815H106.217H74.6309V78.6634Z" fill="black"/>
-        <path d="M229.907 103.391C218.715 113.358 179.16 148.432 142.072 181.276L74.6309 241.03V353.561C74.6309 461.536 74.6783 466.188 75.532 467.991C76.6228 470.412 79.0416 472.785 81.2232 473.544C82.5512 474.019 94.7874 474.161 138.895 474.161H194.859L195.096 423.615C195.333 376.865 195.38 372.973 196.139 371.549C197.23 369.556 199.933 367.373 202.163 366.708C203.49 366.328 217.102 366.186 250.87 366.186C295.404 366.186 297.871 366.233 299.72 367.088C302.424 368.322 304.937 371.454 305.554 374.349C305.886 375.916 306.075 392.954 306.075 425.513V474.399H361.233C421.039 474.399 419 474.493 422.462 471.836C423.363 471.171 424.501 469.7 425.07 468.561L426.066 466.52L426.114 353.799L426.161 241.125L411.269 227.835C397.562 215.59 252.672 87.2066 251.06 85.8776C250.443 85.403 247.123 88.1558 229.907 103.391Z" fill="black"/>
-        
-        <animateMotion path="M100 300 C100 300 250 000 400 300" dur="5s" rotate="auto" repeatCount="indefinite"/>
-        </g>  
-    </svg>
-        
+
+    <img src="materials/axis.svg" width="1500" height="500" >
+
+    <img src="materials/house_3d_3.svg" id="moto"
+        style="position:absolute; top:100px; left:0px">
+
+    <!-- Движение по оси Y -->
+    <input type="button" value="по оси y, вниз" onclick="car_down()">
+    <input type="button" value="по оси y, вверх" onclick="car_up()">
+
+    <!-- Движение по оси X -->
+    <input type="button" value="по оси x, влево" onclick="car_left()">
+    <input type="button" value="по оси x, вправо" onclick="car_right()">
+
+    <!-- Движение по оси Z -->
+    <input type="button" value="по оси z, вперёд" onclick="car_left_down()">
+    <input type="button" value="по оси z, назад" onclick="car_right_up()">
+
 </body>
 
 </html>
