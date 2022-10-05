@@ -3,80 +3,187 @@
 
 <head>
     <meta charset="utf-8">
-    <title>win 8</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>lab_3 gordeev</title>
 </head>
 
 <body>
 
     <script type="text/javascript">
-        function car_down() {
-            x = 0;
-            x = document.getElementById("moto").offsetTop;
-            xn = x + 50;
-            document.getElementById("moto").style.top = xn + "px"
-        }
-        function car_up() {
-            x = 0;
-            x = document.getElementById("moto").offsetTop;
-            xn = x - 50;
-            document.getElementById("moto").style.top = xn + "px"
-        }
-        function car_left() {
-            x = 0;
-            x = document.getElementById("moto").offsetLeft;
-            xn = x - 50;
-            document.getElementById("moto").style.left = xn + "px"
-        }
-        function car_right() {
-            x = 0;
-            x = document.getElementById("moto").offsetLeft;
-            xn = x + 50;
-            document.getElementById("moto").style.left = xn + "px"
-        }
-        function car_left_down() {
-            x = 0;
-            x = document.getElementById("moto").offsetLeft;
-            xn = x - 50;
-            document.getElementById("moto").style.left = xn + "px"
 
+        let timer;
+        let turn = 0;
+
+        function box_down() {
             x = 0;
-            x = document.getElementById("moto").offsetTop;
+            x = document.getElementById("cube").offsetTop;
             xn = x + 50;
-            document.getElementById("moto").style.top = xn + "px"
+            document.getElementById("cube").style.top = xn + "px"
+        }
+        function box_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x - 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+        function box_left() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x - 50;
+            document.getElementById("cube").style.left = xn + "px"
+        }
+        function box_right() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
         }
 
-        function car_right_up() {
+        function box_left_down() {
             x = 0;
-            x = document.getElementById("moto").offsetLeft;
-            xn = x + 50;
-            document.getElementById("moto").style.left = xn + "px"
+            x = document.getElementById("cube").offsetLeft;
+            xn = x - 50;
+            document.getElementById("cube").style.left = xn + "px"
 
             x = 0;
-            x = document.getElementById("moto").offsetTop;
+            x = document.getElementById("cube").offsetTop;
+            xn = x + 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function box_right_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
+
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
             xn = x - 50;
-            document.getElementById("moto").style.top = xn + "px"
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function box_right_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
+
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x - 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function turnOn() {
+            timer = setInterval(turnСube, 200);
+            let x = document.getElementById("on");
+            x.disabled = true;
+        }
+
+        function turnOff() {
+            clearInterval(timer);
+            let x = document.getElementById("on");
+            x.disabled = false;
+        }
+
+        function turnСube() {
+            let x = document.getElementById("cube");
+            turn += 60;
+            x.style.transform = "rotate(" + (turn % 360) + "deg)"
+        }
+
+        function decrease() {
+            document.getElementById('cube').setAttribute("height", "100px");
+            document.getElementById('cube').setAttribute("width", "200px");
+        }
+
+        function base() {
+            document.getElementById('cube').setAttribute("height", "150px");
+            document.getElementById('cube').setAttribute("width", "300px");
+        }
+
+        function increase() {
+            document.getElementById('cube').setAttribute("height", "500px");
+            document.getElementById('cube').setAttribute("width", "1000px");
         }
 
     </script>
 
+    <table>
+        <tr>
+            <td>
+                <h1>
+                    Лабораторная работа 3, Гордеев Никита, 22207 
+                </h1>
+            </td>
+        </tr>
+    </table>
 
-    <img src="materials/axis.svg" width="1500" height="500" >
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси X:
+                    <input type="button" value="влево" onclick="box_left()">
+                    <input type="button" value="вправо" onclick="box_right()">
+                </p>
+            </td>
+        </tr>
+    </table>
 
-    <img src="materials/house_3d_3.svg" id="moto"
-        style="position:absolute; top:100px; left:0px">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси Y:
+                    <input type="button" value="вперёд" onclick="box_left_down()">
+                    <input type="button" value="назад" onclick="box_right_up()">
+                </p>
+            </td>
+        </tr>
+    </table>
 
-    <!-- Движение по оси Y -->
-    <input type="button" value="по оси y, вниз" onclick="car_down()">
-    <input type="button" value="по оси y, вверх" onclick="car_up()">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси Z:
+                    <input type="button" value="вниз" onclick="box_down()">
+                    <input type="button" value="вверх" onclick="box_up()">
+                </p>
+            </td>
+        </tr>
+    </table>
 
-    <!-- Движение по оси X -->
-    <input type="button" value="по оси x, влево" onclick="car_left()">
-    <input type="button" value="по оси x, вправо" onclick="car_right()">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Вращение:
+                    <button id="on" onclick="turnOn()"> вращать </button>
+                    <button id="off" onclick="turnOff()"> остановить </button>
+                </p>
+            </td>
+        </tr>
+    </table>
 
-    <!-- Движение по оси Z -->
-    <input type="button" value="по оси z, вперёд" onclick="car_left_down()">
-    <input type="button" value="по оси z, назад" onclick="car_right_up()">
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Масштабирование:
+                    <button onclick="decrease()"> уменьшить </button>
+                    <button onclick="base()"> по умолчанию </button>
+                    <button onclick="increase()"> увеличить </button>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <img src="axis.svg">
+    <img src="cube.svg#svgView(viewBox(0,0,2000,1000))" id="cube" style="position:absolute; top:795px; left:340px">
 
 </body>
 

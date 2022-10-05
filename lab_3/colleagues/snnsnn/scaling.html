@@ -1,0 +1,49 @@
+<!-- Вращение -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+
+<script type="text/javascript">
+
+    function decrease() {
+        document.getElementById('cube').setAttribute("height", "100px");
+        document.getElementById('cube').setAttribute("width", "200px");
+    }
+
+    function base() {
+        document.getElementById('cube').setAttribute("height", "150px");
+        document.getElementById('cube').setAttribute("width", "300px");
+    }
+
+    function increase() {
+        document.getElementById('cube').setAttribute("height", "500px");
+        document.getElementById('cube').setAttribute("width", "1000px");
+    }
+
+</script>
+
+<body>
+
+    <img src="C:\Users\nikit\3D Objects\projects\petrsu\computer_graphics\lab_3\cube.svg#svgView(viewBox(0,0,2000,1000))"
+        id="cube" style="position:absolute; top:385px; left:90px">
+    <p>
+        Масштабирование
+        <button id="off" onclick="decrease()"> уменьшить </button>
+        <button id="off" onclick="base()"> по умолчанию </button>
+        <button id="off" onclick="increase()"> увеличить </button>
+    </p>
+
+</body>
+
+</html>
+
+<!-- 
+    x = 0;
+    x = document.getElementById("cube").offsetTop;
+    xn = x + 50;
+    document.getElementById("cube").style.top = xn + "px" 
+-->

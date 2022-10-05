@@ -1,0 +1,40 @@
+<!-- Масштабирование -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Управление размером</title>
+</head>
+
+<body>
+    <center>
+        <h3>Управление размером картинки</h3>
+        <!-- <img id="img" src="C:\Users\nikit\3D Objects\projects\petrsu\computer_graphics\lab_3\paris.jpg"> -->
+        <img src="C:\Users\nikit\3D Objects\projects\petrsu\computer_graphics\lab_3\cube.svg#svgView(viewBox(0,0,2000,1000))"
+            id="img" style="position:absolute; top:385px; left:90px">
+
+        <h3><i>Выберите размер картинки</i></h3>
+        <button name="sizer" data-size="1">Normal</button>
+        <button name="sizer" data-size="0.5">1/2 size</button>
+        <button name="sizer" data-size="2">size*2</button>
+        <button name="sizer" data-size="3">size*3</button>
+    </center>
+
+    <script type="text/javascript">
+        var img = document.getElementById('img');
+        if (!img.naturalWidth) img.naturalWidth = img.width;
+        if (!img.naturalHeight) img.naturalHeight = img.height;
+
+        var buttons = document.getElementsByName('sizer');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function () {
+                var size = this.getAttribute('data-size');
+                img.width = img.naturalWidth * size;
+                img.height = img.naturalHeight * size;
+            }
+        }
+    </script>
+</body>
+
+</html>

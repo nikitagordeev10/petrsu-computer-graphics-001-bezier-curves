@@ -1,0 +1,55 @@
+<!-- Вращение -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+
+<script type="text/javascript">
+  let timer;
+  let turn = 0;
+
+  function turnOn() {
+    timer = setInterval(turnСube, 200);
+    let x = document.getElementById("on");
+    x.disabled = true;
+  }
+
+  function turnOff() {
+    clearInterval(timer);
+    let x = document.getElementById("on");
+    x.disabled = false;
+  }
+
+  function turnСube() {
+    let x = document.getElementById("cube");
+    turn += 60;
+    x.style.transform = "rotate(" + (turn % 360) + "deg)"
+  }
+
+  function box_right() {
+    x = 0;
+    x = document.getElementById("cube").offsetLeft;
+    xn = x + 50;
+    document.getElementById("cube").style.left = xn + "px"
+  }
+</script>
+
+<body>
+
+  <!-- <img id="cube" src="http://www.pngmart.com/files/7/Ceiling-Сube-PNG-Transparent-Image.png" width="200"
+    heigh="100"><br>
+     -->
+  <img src="C:\Users\nikit\3D Objects\projects\petrsu\computer_graphics\lab_3\cube.svg#svgView(viewBox(0,0,2000,1000))"
+    id="cube" style="position:absolute; top:385px; left:90px">
+
+  <button id="on" onclick="turnOn()"> On </button><br>
+  <button id="off" onclick="turnOff()"> Off </button>
+  <input type="button" value="по оси x, вправо" onclick="box_right()">
+
+
+</body>
+
+</html>
