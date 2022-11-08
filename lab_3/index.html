@@ -13,32 +13,32 @@
         let timer;
         let turn = 0;
 
-        function box_down() {
+        function cube_down() {
             x = 0;
             x = document.getElementById("cube").offsetTop;
             xn = x + 50;
             document.getElementById("cube").style.top = xn + "px"
         }
-        function box_up() {
+        function cube_up() {
             x = 0;
             x = document.getElementById("cube").offsetTop;
             xn = x - 50;
             document.getElementById("cube").style.top = xn + "px"
         }
-        function box_left() {
+        function cube_left() {
             x = 0;
             x = document.getElementById("cube").offsetLeft;
             xn = x - 50;
             document.getElementById("cube").style.left = xn + "px"
         }
-        function box_right() {
+        function cube_right() {
             x = 0;
             x = document.getElementById("cube").offsetLeft;
             xn = x + 50;
             document.getElementById("cube").style.left = xn + "px"
         }
 
-        function box_left_down() {
+        function cube_left_down() {
             x = 0;
             x = document.getElementById("cube").offsetLeft;
             xn = x - 50;
@@ -50,7 +50,7 @@
             document.getElementById("cube").style.top = xn + "px"
         }
 
-        function box_right_up() {
+        function cube_right_up() {
             x = 0;
             x = document.getElementById("cube").offsetLeft;
             xn = x + 50;
@@ -62,7 +62,7 @@
             document.getElementById("cube").style.top = xn + "px"
         }
 
-        function box_right_up() {
+        function cube_right_up() {
             x = 0;
             x = document.getElementById("cube").offsetLeft;
             xn = x + 50;
@@ -124,8 +124,8 @@
             <td>
                 <p>
                     Движение по оси X:
-                    <input type="button" value="влево" onclick="box_left()">
-                    <input type="button" value="вправо" onclick="box_right()">
+                    <input type="button" value="влево" onclick="cube_left()">
+                    <input type="button" value="вправо" onclick="cube_right()">
                 </p>
             </td>
         </tr>
@@ -136,8 +136,8 @@
             <td>
                 <p>
                     Движение по оси Y:
-                    <input type="button" value="вперёд" onclick="box_left_down()">
-                    <input type="button" value="назад" onclick="box_right_up()">
+                    <input type="button" value="вперёд" onclick="cube_left_down()">
+                    <input type="button" value="назад" onclick="cube_right_up()">
                 </p>
             </td>
         </tr>
@@ -148,8 +148,8 @@
             <td>
                 <p>
                     Движение по оси Z:
-                    <input type="button" value="вниз" onclick="box_down()">
-                    <input type="button" value="вверх" onclick="box_up()">
+                    <input type="button" value="вниз" onclick="cube_down()">
+                    <input type="button" value="вверх" onclick="cube_up()">
                 </p>
             </td>
         </tr>
@@ -183,7 +183,7 @@
     <hr>
 
     <img src="axis.svg">
-    <img src="cube.svg#svgView(viewBox(0,0,2000,1000))" id="cube" style="position:absolute; top:795px; left:340px">
+    <img src="cube.svg#svgView(viewcube(0,0,2000,1000))" id="cube" style="position:absolute; top:795px; left:340px">
 
 </body>
 
