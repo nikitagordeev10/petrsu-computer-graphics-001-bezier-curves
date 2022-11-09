@@ -1,4 +1,4 @@
-//Vertex shader program
+// вершинного шейдера программа
 var VSHADER_SOURCE =
     'attribute vec4 a_Position;' +
     'attribute vec4 a_Color;' +
@@ -9,7 +9,7 @@ var VSHADER_SOURCE =
     'v_Color = a_Color;' +
     '}';
 
-//Fragment shader program
+// Программа Кусок Цвет
 var FSHADER_SOURCE =
     '#ifdef GL_ES\n' +
     'precision mediump float;\n' +
@@ -20,38 +20,38 @@ var FSHADER_SOURCE =
     '}';
 
 function main() {
-    //Get canvas element
+    // Получить элемент Canvas
     var canvas = document.getElementById("webgl");
     if (!canvas) {
         console.log("Failed to retrieve the <canvas> element");
         return;
     }
 
-    //Get WebGL drawing context
+    // Получаем контекст рисования WebGL
     var gl = getWebGLContext(canvas);
     if (!gl) {
         console.log("Failed to get the rendering context for WebGL");
         return;
     }
 
-    //Initialize the shader
+    // Инициализация шейдер
     if (!initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE)) {
         console.log("Failed to initialize shaders.");
         return;
     }
 
-    //Set the vertex position
+    // Установить положение вершин
     var n = initVertexBuffers(gl);
     if (n < 0) {
         console.log('Failed to set the positions of the vertices');
         return;
     }
 
-    //Specify empty <canvas> color
+    // Укажите пустой <холст> цвет
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.enable(gl.DEPTH_TEST);
 
-    //Get the storage location of u_ViewMatrix, u_ModelMatrix and u_ProjMatrix variables
+    // Получить место хранения U_ViewMatrix, U_MODELMATRIX и U_Projmatrix переменных
     var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
     if (u_MvpMatrix < 0) {
         console.log("Failed to get the storage location of u_MvpMatrix");
@@ -67,34 +67,34 @@ function main() {
 
     gl.clear(gl.COLOR_BUFFER_BIT || gl.DEPTH_BUFFER_BIT);
 
-    //Draw the cube
+    // Нарисовать куб
     gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
 }
 
 function initVertexBuffers(gl) {
     var verticesColors = new Float32Array([
-        //Vertex coordinates and color
-        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,  // v0 white
-        -1.0, 1.0, 1.0, 1.0, 0.0, 1.0,  // v1 magenta
-        -1.0, -1.0, 1.0, 1.0, 0.0, 0.0,  // v2 red
-        1.0, -1.0, 1.0, 1.0, 1.0, 0.0,  // v3 yellow
-        1.0, -1.0, -1.0, 0.0, 1.0, 0.0,  // v4 green
-        1.0, 1.0, -1.0, 0.0, 1.0, 1.0,  // v5 cyan
-        -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 blue
-        -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 black
+        // координаты вершин и цветы
+        1.0, 1.0, 1.0, 1.0, 1.0, 1.0,  // v0 белый
+        -1.0, 1.0, 1.0, 1.0, 0.0, 1.0,  // v1 красный
+        -1.0, -1.0, 1.0, 1.0, 0.0, 0.0,  // v2 красный
+        1.0, -1.0, 1.0, 1.0, 1.0, 0.0,  // v3 желтый
+        1.0, -1.0, -1.0, 0.0, 1.0, 0.0,  // v4 зеленый
+        1.0, 1.0, -1.0, 0.0, 1.0, 1.0,  // v5 циан
+        -1.0, 1.0, -1.0, 0.0, 0.0, 1.0,  // v6 синий
+        -1.0, -1.0, -1.0, 0.0, 0.0, 0.0   // v7 черный
     ]);
 
-    //Vertex index
+    // индекс вершины
     var indices = new Uint8Array([
-        0, 1, 2, 0, 2, 3,    // before
-        0, 3, 4, 0, 4, 5,    // right
-        0, 5, 6, 0, 6, 1,    // up
-        1, 6, 7, 1, 7, 2,    // left
-        7, 4, 3, 7, 3, 2,    // down
-        4, 7, 6, 4, 6, 5     // Rear
+        0, 1, 2, 0, 2, 3,    // вперед
+        0, 3, 4, 0, 4, 5,    // Правильно
+        0, 5, 6, 0, 6, 1,    // начальство
+        1, 6, 7, 1, 7, 2,    // Левый
+        7, 4, 3, 7, 3, 2,    // Вниз
+        4, 7, 6, 4, 6, 5     // Задний
     ]);
 
-    //Create a buffer object
+    // Создание объекта буфера
     var vertexColorBuffer = gl.createBuffer();
     var indexBuffer = gl.createBuffer();
     if (!vertexColorBuffer || !indexBuffer) {
@@ -102,9 +102,9 @@ function initVertexBuffers(gl) {
         return -1;
     }
 
-    //Save the buffer object to the target
+    // Сохранить буфер объекта к цели
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
-    //Write data to the cache object
+    // Запись данных в объект кэша
     gl.bufferData(gl.ARRAY_BUFFER, verticesColors, gl.STATIC_DRAW);
 
     var FSIZE = verticesColors.BYTES_PER_ELEMENT;
