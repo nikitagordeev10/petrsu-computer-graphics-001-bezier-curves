@@ -1,0 +1,15 @@
+#canvas_container1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 640px;
+    height: 480px;
+  }
+  
+  #canvas_container2 {
+    position: absolute;
+    left: 0px;
+    top: 500px;
+    width: 640px;
+    height: 480px;
+  }

@@ -19,9 +19,11 @@ var FSHADER_SOURCE =
     'gl_FragColor = v_Color;' +
     '}';
 
+// =====================================================================
+
 function main() {
     // Получить элемент Canvas
-    var canvas = document.getElementById("webgl");
+    var canvas = document.getElementById("HelloCube");
     if (!canvas) {
         console.log("Failed to retrieve the <canvas> element");
         return;
@@ -70,6 +72,8 @@ function main() {
     // Нарисовать куб
     gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
 }
+
+// =====================================================================
 
 function initVertexBuffers(gl) {
     var verticesColors = new Float32Array([

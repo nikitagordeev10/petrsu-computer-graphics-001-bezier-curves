@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>lab_6_gordeev</title>
+</head>
+
+<script src="lib/webgl-utils.js"></script>
+<script src="lib/webgl-debug.js"></script>
+<script src="lib/cuon-utils.js"></script>
+<script src="lib/cuon-matrix.js"></script>
+<script src="OneScreen.js"></script>
+
+<body onload="main()">
+    <!-- Указание авторства -->
+    <p>Лабораторная работа 6, группа 22207, Гордеев Никита</p>
+
+    <!-- HelloCube -->
+    <p> Трехмерная фигура "куб", грани заполнены градиентом</p>
+    <canvas id="HelloCube" width="400" height="400">Please use a browser that supports "canvas"</canvas> <br>
+
+    <!-- ColoredCube -->
+    <p>Трехмерная фигура "куб", каждая грань окрашена в свой цвет</p>
+    <canvas id="ColoredCube" width="400" height="400">Please use a browser that supports "canvas"</canvas> <br>
+    
+    <!-- HelloTetrahedron -->
+    <p>Трехмерная фигура "тетраэдр", грани заполнены градиентом </p>
+    <canvas id="HelloTetrahedron" width="400" height="400">Please use a browser that supports "canvas"</canvas> <br>
+
+    <!-- ColoredTetrahedron -->
+    <p>Трехмерная фигура "тетраэдр", каждая грань окрашена в свой цвет</p>
+    <canvas id="ColoredTetrahedron" width="400" height="400">Please use a browser that supports "canvas"</canvas> <br>
+    
+</html>
+
+<!-- 
+    Материалы:
+    Глава 7. Вперед, в трехмерный мир. Привет, куб // WebGL. Программирование трехмерной графики URL: https://vk.com/wall-128170344_2612?w=wall-128170344_2612 (дата обращения: 08.11.2022).
+    Листинг 4.1. RotatedTriangle_Matrix4.html (код загрузки библиотеки) // WebGL. Программирование трехмерной графики URL: https://vk.com/wall-128170344_2612?w=wall-128170344_2612 (дата обращения: 08.11.2022).
+    Листинг 7.12. HelloCube.js // WebGL. Программирование трехмерной графики URL: https://vk.com/wall-128170344_2612?w=wall-128170344_2612 (дата обращения: 08.11.2022). 
+    Danqi7 / WebGL-WorldScene // GitHub URL: https://github.com/Danqi7/WebGL-WorldScene (дата обращения: 08.11.2022).
+    [Примечания] "WebGL Руководство по программированию" Study - Глава 7 Вводит 3D World (5-куб) // Русские Блоги URL: https://russianblogs.com/article/53142268407/ (дата обращения: 08.11.2022).
+    [Notes] "WebGL Programming Guide" learning-Chapter 7 into the three-dimensional world (5-cube) // ProgrammerSought URL: https://www.programmersought.com/article/30906311378/ (дата обращения: 08.11.2022).
+    Downloads // WebGL Programming Guide. Matsuda & Lea URL: https://sites.google.com/site/webglbook/home/downloads (дата обращения: 08.11.2022).
+    using 2 canvas on same page // stackoverflow URL: https://stackoverflow.com/questions/8669615/using-2-canvas-on-same-page (дата обращения: 09.11.2022). 
+    Проверка условий в Javascript // HTML = javascript ( php ( $mysql ), $css ); URL: http://ir2.ru/javascript-if.aspx (дата обращения: 09.11.2022).
+    Is if(document.getElementById('something')!=null) identical to if(document.getElementById('something'))? // stackoverflow URL: https://stackoverflow.com/questions/3247251/is-ifdocument-getelementbyidsomething-null-identical-to-ifdocument-getel (дата обращения: 09.11.2022).
+    В одном html строго только одно body? // Хабр URL: https://qna.habr.com/q/104069 (дата обращения: 09.11.2022).
+    Возможно ли иметь два контекста WebGL на одной странице? // progi.pro все IT вопросы и ответы Задать вопрос URL: https://stackovergo.com/ru/q/2349367/is-it-possible-to-have-two-webgl-contexts-on-the-same-page (дата обращения: 09.11.2022).
+    Листинг 9.1. JointModel.js // WebGL. Программирование трехмерной графики URL: https://vk.com/wall-128170344_2612 (дата обращения: 09.11.2022). 
+    [Примечания] «Руководство по программированию WebGL» - глава 9 Модель иерархии (модель 1-одиночка) // Русские Блоги URL: https://russianblogs.com/article/57032012333/ (дата обращения: 09.11.2022).
+-->

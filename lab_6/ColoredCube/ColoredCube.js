@@ -22,7 +22,7 @@ var FSHADER_SOURCE =
 
 function main() {
   // Retrieve <canvas> element
-  var canvas = document.getElementById('webgl');
+  var canvas = document.getElementById('ColoredCube');
 
   // Get the rendering context for WebGL
   var gl = getWebGLContext(canvas);
