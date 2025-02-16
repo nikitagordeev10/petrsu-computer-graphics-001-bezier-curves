@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 2, Гордеев Никита, 22207</title>
+</head>
+<body>
+
+  <!-- Указание авторства -->
+  <svg width="100%" height="50" xmlns="http://www.w3.org/2000/svg">
+      <text x="50" y="30" font-family="Roboto" font-size="20" fill="#000000"> Лабораторная работа 2, Гордеев Никита, 22207 </text>
+  </svg>
+
+  <!-- Задание 1, "Изображение смайла" -->
+  <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <circle cx="250" cy="250" r="120" fill="lightblue" stroke="blue" stroke-width="12" />
+      <ellipse cx="190" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <ellipse cx="310" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <circle cx="310" cy="210" r="11" fill="black" />
+      <circle cx="190" cy="210" r="11" fill="black" />
+      <path fill="none" stroke="blue" stroke-width="12" d="M180, 290 C180, 290, 250, 360, 320, 290"/>
+    </g>
+  </svg>
+
+    <!-- Задание 2, "Поворот фигуры на 30 градусов" -->
+  <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(0.87,0.50,-0.50,0.87,0,0) translate(80, -160)">
+      <circle cx="250" cy="250" r="120" fill="lightblue" stroke="blue" stroke-width="12" />
+      <ellipse cx="190" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <ellipse cx="310" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <circle cx="310" cy="210" r="11" fill="black" />
+      <circle cx="190" cy="210" r="11" fill="black" />
+      <path fill="none" stroke="blue" stroke-width="12" d="M180, 290 C180, 290, 250, 360, 320, 290"/>
+    </g>
+  </svg>
+
+    <!-- Задание 3, "Одновременный сдвиг на 45 градусов, смещение на 300 пикселей по горизонтали и масштабирование 50% по оси x" -->
+  <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(0.50,0.00,0.45,1.00,300,0) translate(-550)">
+      <circle cx="250" cy="250" r="120" fill="lightblue" stroke="blue" stroke-width="12" />
+      <ellipse cx="190" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <ellipse cx="310" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <circle cx="310" cy="210" r="11" fill="black" />
+      <circle cx="190" cy="210" r="11" fill="black" />
+      <path fill="none" stroke="blue" stroke-width="12" d="M180, 290 C180, 290, 250, 360, 320, 290"/>
+    </g>
+  </svg>
+
+  <!-- Задание 4, "Размытие рисунка" -->
+  <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <filter id="myfeGaussianBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <g filter="url(#myfeGaussianBlur)">
+      <circle cx="250" cy="250" r="120" fill="lightblue" stroke="blue" stroke-width="12" />
+      <ellipse cx="190" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <ellipse cx="310" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+      <circle cx="310" cy="210" r="11" fill="black" />
+      <circle cx="190" cy="210" r="11" fill="black" />
+      <path fill="none" stroke="blue" stroke-width="12" d="M180, 290 C180, 290, 250, 360, 320, 290"/>
+    </g>
+  </svg>
+
+  <!-- Задание 5, "Плавное движение фигуры по следующей траектории " -->
+  <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <path d="M100 300 C100 300 250 000 400 300" style="fill: none; stroke:blue;stroke-width:2;"/>
+
+      <g transform="translate(40, -360) rotate(65 50 50)">
+        <circle cx="250" cy="250" r="120" fill="lightblue" stroke="blue" stroke-width="12" />
+        <ellipse cx="190" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+        <ellipse cx="310" cy="210" rx="40" ry="20" fill="white" stroke="blue" stroke-width="12" />
+        <circle cx="310" cy="210" r="11" fill="black" />
+        <circle cx="190" cy="210" r="11" fill="black" />
+        <path fill="none" stroke="blue" stroke-width="12" d="M180, 290 C180, 290, 250, 360, 320, 290"/>
+          
+      <animateMotion path="M100 300 C100 300 250 000 400 300" dur="5s" rotate="auto" repeatCount="indefinite"/>
+      </g>
+  </svg>
+
+</body>

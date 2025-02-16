@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>lab_3 gordeev</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        let timer;
+        let turn = 0;
+
+        function cube_down() {
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x + 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+        function cube_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x - 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+        function cube_left() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x - 50;
+            document.getElementById("cube").style.left = xn + "px"
+        }
+        function cube_right() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
+        }
+
+        function cube_left_down() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x - 50;
+            document.getElementById("cube").style.left = xn + "px"
+
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x + 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function cube_right_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
+
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x - 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function cube_right_up() {
+            x = 0;
+            x = document.getElementById("cube").offsetLeft;
+            xn = x + 50;
+            document.getElementById("cube").style.left = xn + "px"
+
+            x = 0;
+            x = document.getElementById("cube").offsetTop;
+            xn = x - 50;
+            document.getElementById("cube").style.top = xn + "px"
+        }
+
+        function turnOn() {
+            timer = setInterval(turnСube, 200);
+            let x = document.getElementById("on");
+            x.disabled = true;
+        }
+
+        function turnOff() {
+            clearInterval(timer);
+            let x = document.getElementById("on");
+            x.disabled = false;
+        }
+
+        function turnСube() {
+            let x = document.getElementById("cube");
+            turn += 60;
+            x.style.transform = "rotate(" + (turn % 360) + "deg)"
+        }
+
+        function decrease() {
+            document.getElementById('cube').setAttribute("height", "100px");
+            document.getElementById('cube').setAttribute("width", "200px");
+        }
+
+        function base() {
+            document.getElementById('cube').setAttribute("height", "150px");
+            document.getElementById('cube').setAttribute("width", "300px");
+        }
+
+        function increase() {
+            document.getElementById('cube').setAttribute("height", "500px");
+            document.getElementById('cube').setAttribute("width", "1000px");
+        }
+
+    </script>
+
+    <table>
+        <tr>
+            <td>
+                <h1>
+                    Лабораторная работа 3, Гордеев Никита, 22207 
+                </h1>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси X:
+                    <input type="button" value="влево" onclick="cube_left()">
+                    <input type="button" value="вправо" onclick="cube_right()">
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси Y:
+                    <input type="button" value="вперёд" onclick="cube_left_down()">
+                    <input type="button" value="назад" onclick="cube_right_up()">
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Движение по оси Z:
+                    <input type="button" value="вниз" onclick="cube_down()">
+                    <input type="button" value="вверх" onclick="cube_up()">
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Вращение:
+                    <button id="on" onclick="turnOn()"> вращать </button>
+                    <button id="off" onclick="turnOff()"> остановить </button>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <p>
+                    Масштабирование:
+                    <button onclick="decrease()"> уменьшить </button>
+                    <button onclick="base()"> по умолчанию </button>
+                    <button onclick="increase()"> увеличить </button>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <img src="axis.svg">
+    <img src="cube.svg#svgView(viewcube(0,0,2000,1000))" id="cube" style="position:absolute; top:795px; left:340px">
+
+</body>
+
+</html>

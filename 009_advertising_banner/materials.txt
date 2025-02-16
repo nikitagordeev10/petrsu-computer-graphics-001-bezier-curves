@@ -1,0 +1,3 @@
+Анимация и программирование в Adobe Animate - #6. Создаем анимированный баннер html5 для сайта // Anton Vavilkin URL: https://www.youtube.com/watch?v=STyiZbZc10E&list=PLj-VFmLfBY6ilf-5sjFSd7hIcUEJvs1Xc&index=6 (дата обращения: 05.12.2022).
+27. Adobe Animate. Shape Tween. Анимация шарфика // Eduard Peter URL: https://www.youtube.com/watch?v=hnM72KZku0s (дата обращения: 05.12.2022).
+Урок по анимации Motion tween и Shape tween в Adobe Flash // Vilinium URL: https://www.youtube.com/watch?v=KCIm7JO1Sgk (дата обращения: 05.12.2022).

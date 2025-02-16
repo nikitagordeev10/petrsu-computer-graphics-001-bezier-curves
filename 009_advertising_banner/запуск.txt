@@ -1,0 +1,2 @@
+1) открыть gordeev_lab_9.fla
+2) нажать CTRL + ENTER
